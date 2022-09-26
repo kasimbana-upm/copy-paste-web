@@ -1,0 +1,9 @@
+.alignRight {
+    width: 100%;
+    text-align: right;
+}
+
+.addItem {
+    user-select: none;
+    cursor: pointer;
+}
