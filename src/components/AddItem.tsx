@@ -5,7 +5,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from "../components/Button"
-import add from "../public/add.png";
+import add from "../assets/add.png"
 import * as styles from "../styles/Home.module.css"
 
 interface Props {
@@ -28,7 +28,7 @@ const AddItem = (props: Props) => {
 
   return (
     <div className={styles.alignRight}>
-      <img src={add} className={styles.addItem} onClick={() => setOpen(true)}></img>
+      <img src={add} alt="add" className={styles.addItem} onClick={() => setOpen(true)}></img>
       <Dialog open={open}>
         <DialogTitle>Añadir Copy Paste</DialogTitle>
         <DialogContent>
