@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import type { HeadFC } from "gatsby"
 import AddItem from "../components/AddItem";
 import Card from '../components/Card'
@@ -13,11 +13,26 @@ interface CopyPaste {
 }
 
 const IndexPage = () => {
-  const [copypastes, setCopyPastes] = React.useState(rr);
+  const [copypastes, setCopyPastes] = useState<CopyPaste[]>([]);
 
-  function addItem(title: string, body: string) {
-    console.log("add item");
-    
+  useEffect(() => {
+    CopypasteService.getAllSortDesc().then(data => setCopyPastes(data))
+  }, [])
+
+  async function deleteItem(index: number, id: string) {
+    const status = await CopypasteService.delete(id);
+    if(status == 200) {
+      copypastes.splice(index, 1)
+      setCopyPastes([...copypastes])
+    }
+  }
+
+  async function addItem(title: string, body: string) {
+    const data = await CopypasteService.create(title, body);
+    if(data) {
+      copypastes.unshift(data)
+      setCopyPastes([...copypastes])
+    }
   }
 
   return (
@@ -28,7 +43,7 @@ const IndexPage = () => {
       <AddItem onClose={addItem}></AddItem>
       <div>
         {
-          copypastes.length > 0 && copypastes.map((cp: CopyPaste, index: number) => (
+          copypastes?.length > 0 && copypastes.map((cp: CopyPaste, index: number) => (
             <Card key={index} title={cp.title} body={cp.body} onClick={() => deleteItem(index, cp.id)} />
           ))
         }
