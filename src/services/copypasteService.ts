@@ -7,7 +7,7 @@ export interface CopyPaste {
     tags: string[]
 }
 
-const API_URL = "http://localhost:8080";
+const API_URL = "https://copyes.herokuapp.com";
 
 export class CopypasteService {
     static async  getAllSortDesc(): Promise<CopyPaste[]> {
