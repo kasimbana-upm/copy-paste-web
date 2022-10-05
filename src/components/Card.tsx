@@ -4,7 +4,8 @@ import Button from "./Button";
 interface Props {
     title: string,
     body: string,
-    onClick: () => {}
+    onClick: () => {},
+    copyToClipboard: (text: string) => {}
 }
 
 const styles = {
@@ -27,6 +28,9 @@ const Card = (props: Props) => {
             <h3>{props.title}</h3>
             <p>{props.body}</p>
             <div style={styles.container.buttonContainer}>
+                <Button onClick={props.copyToClipboard}>
+                    Copiar
+                </Button>
                 <Button onClick={props.onClick}>
                     Eliminar
                 </Button>
