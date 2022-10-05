@@ -48,7 +48,7 @@ const IndexPage = () => {
       <div>
         {
           copypastes?.length > 0 && copypastes.map((cp: CopyPaste, index: number) => (
-            <Card key={index} title={cp.title} body={cp.body} onClick={() => deleteItem(index, cp.id)} copyToClipboard={() => copyToClipboard(cp.body)}/>
+            <Card key={index} title={cp.title} body={cp.body} onDelete={() => deleteItem(index, cp.id)} copyToClipboard={() => copyToClipboard(cp.body)}/>
           ))
         }
       </div>
