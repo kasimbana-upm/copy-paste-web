@@ -1,10 +1,11 @@
 import * as React from "react";
 import Button from "./Button";
+import DeleteItem from "./DeleteItem";
 
 interface Props {
     title: string,
     body: string,
-    onClick: () => void,
+    onDelete: () => void,
     copyToClipboard: (text: string) => void
 }
 
@@ -31,9 +32,7 @@ const Card = (props: Props) => {
                 <Button onClick={props.copyToClipboard}>
                     Copiar
                 </Button>
-                <Button onClick={props.onClick}>
-                    Eliminar
-                </Button>
+                <DeleteItem onDelete={props.onDelete}></DeleteItem>
             </div>
         </div>
     )
