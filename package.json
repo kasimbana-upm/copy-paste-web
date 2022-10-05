@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "httpServer": "http-server public",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
