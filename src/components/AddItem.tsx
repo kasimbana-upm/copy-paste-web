@@ -1,10 +1,5 @@
 import * as React from "react"
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Button from "../components/Button"
+import { Button, Dialog, DialogActions, DialogTitle, DialogContent, TextField } from "@mui/material";
 import add from "../assets/add.png"
 import * as styles from "../styles/Home.module.css"
 
