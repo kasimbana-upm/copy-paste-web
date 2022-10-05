@@ -4,8 +4,8 @@ import Button from "./Button";
 interface Props {
     title: string,
     body: string,
-    onClick: () => {},
-    copyToClipboard: (text: string) => {}
+    onClick: () => void,
+    copyToClipboard: (text: string) => void
 }
 
 const styles = {
