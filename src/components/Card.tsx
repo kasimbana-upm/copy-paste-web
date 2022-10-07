@@ -1,12 +1,13 @@
 import * as React from "react";
-import Button from "./Button";
 import DeleteItem from "./DeleteItem";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { IconButton } from "@mui/material";
 
 interface Props {
     title: string,
     body: string,
     onDelete: () => void,
-    copyToClipboard: (text: string) => void
+    onCopy: () => void
 }
 
 const styles = {
@@ -29,9 +30,9 @@ const Card = (props: Props) => {
             <h3>{props.title}</h3>
             <p>{props.body}</p>
             <div style={styles.container.buttonContainer}>
-                <Button onClick={props.copyToClipboard}>
-                    Copiar
-                </Button>
+                <IconButton onClick={() => props.onCopy()}>
+                    <ContentCopyIcon></ContentCopyIcon>
+                </IconButton>
                 <DeleteItem onDelete={props.onDelete}></DeleteItem>
             </div>
         </div>
