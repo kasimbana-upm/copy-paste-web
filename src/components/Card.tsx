@@ -31,7 +31,7 @@ const Card = (props: Props) => {
             <p>{props.body}</p>
             <div style={styles.container.buttonContainer}>
                 <IconButton onClick={() => props.onCopy()}>
-                    <ContentCopyIcon></ContentCopyIcon>
+                    <ContentCopyIcon/>
                 </IconButton>
                 <DeleteItem onDelete={props.onDelete}></DeleteItem>
             </div>

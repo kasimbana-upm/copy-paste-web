@@ -1,5 +1,6 @@
-import { Button, Dialog, DialogActions, DialogTitle } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogTitle, IconButton } from "@mui/material";
 import React, { useState } from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 interface Props {
     onDelete: () => void
@@ -17,7 +18,9 @@ const DeleteItem = (props: Props) => {
 
     return (
         <div>
-            <Button variant="contained" onClick={() => setOpen(true)}>Eliminar</Button>
+            <IconButton onClick={() => setOpen(true)}>
+                <DeleteIcon/>
+            </IconButton>
             <Dialog open={open}>
                 <DialogTitle>Eliminar copypaste</DialogTitle>
                 <DialogActions>
