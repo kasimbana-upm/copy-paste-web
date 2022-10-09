@@ -4,6 +4,7 @@ import AddItem from "../components/AddItem";
 import Card from '../components/Card'
 import { CopypasteService } from '../services/copypasteService'
 import '../styles/globals.css'
+import CircularProgress from '@mui/material/CircularProgress';
 
 interface CopyPaste {
   id: string,
@@ -46,6 +47,9 @@ const IndexPage = () => {
       </h1>
       <AddItem onClose={addItem}></AddItem>
       <div>
+        {
+          copypastes?.length == 0 && <CircularProgress></CircularProgress>
+        }
         {
           copypastes?.length > 0 && copypastes.map((cp: CopyPaste, index: number) => (
             <Card key={index} title={cp.title} body={cp.body} onDelete={() => deleteItem(index, cp.id)} onCopy={() => copyToClipboard(cp.body)}/>
