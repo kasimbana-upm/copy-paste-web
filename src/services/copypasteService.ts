@@ -1,13 +1,13 @@
 ///import { API_URL } from "../constants";
 
+import { API_URL } from "../constants";
+
 export interface CopyPaste {
     id: string,
     title: string,
     body: string,
     tags: string[]
 }
-
-const API_URL = "https://copyes.herokuapp.com";
 
 export class CopypasteService {
     static async  getAllSortDesc(): Promise<CopyPaste[]> {

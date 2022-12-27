@@ -1,0 +1,1 @@
+export const API_URL = "https://copy-paste-production.up.railway.app";
